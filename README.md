@@ -6,7 +6,6 @@
 
 ## 📸 Giao diện ứng dụng
 *(Chừa sẵn chỗ để bạn chèn ảnh chụp màn hình trang web sau khi chạy thực tế)*
-![Ảnh chụp giao diện dự án](https://placeholder.com)
 
 ## 📌 Tính năng nổi bật
 
