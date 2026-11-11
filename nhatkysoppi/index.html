@@ -313,7 +313,7 @@
         <span class="floaty two" aria-hidden="true">🦴</span>
         <span class="floaty three" aria-hidden="true">✨</span>
         <div class="photo-card" id="photoCard">
-          <img id="soppiPhoto" src="https://drive.google.com/uc?export=view&amp;id=1yXKlGxfvbQg1JryiepSaW4dtNI07jePE" alt="Sóppi trong ảnh từ album Google Drive">
+          <img id="soppiPhoto" src="soppi1.jpg" alt="Sóppi cục bông 5XL">
           <div class="photo-placeholder" id="photoPlaceholder" hidden>
             <span class="dog-emoji" aria-hidden="true">🐕</span>
             <strong>Chỗ này dành cho ảnh Sóppi!</strong>
@@ -451,12 +451,14 @@
       const photoError = document.getElementById("photoError");
       const photoImage = document.getElementById("soppiPhoto");
       const photoNumber = document.getElementById("photoNumber");
+      
+      // DANH SÁCH ẢNH NỘI BỘ TẢI LÊN GITHUB
       const photos = [
-        { src: "https://drive.google.com/uc?export=view&id=1yXKlGxfvbQg1JryiepSaW4dtNI07jePE", alt: "Sóppi trong ảnh đầu tiên từ album Google Drive" },
-        { src: "https://drive.google.com/uc?export=view&id=1F_kWdNFesUKFrT4LkGCudYumSzqrDgvx", alt: "Sóppi trong ảnh thứ hai từ album Google Drive" },
-        { src: "https://drive.google.com/uc?export=view&id=1P5lqyNTNRUc4hGqTyap0yOYYXeZlfRwQ", alt: "Sóppi trong ảnh thứ ba từ album Google Drive" },
-        { src: "https://drive.google.com/uc?export=view&id=1hU0Rp8dwD5HTthNtWECYaPRLcE_W5VDW", alt: "Sóppi trong ảnh thứ tư từ album Google Drive" },
-        { src: "https://drive.google.com/uc?export=view&id=1ANqZlx5ibrIUgdZDj5vxNgvY_19i77Kz", alt: "Sóppi trong ảnh thứ năm từ album Google Drive" }
+        { src: "soppi1.jpg", alt: "Sóppi - Cậu cún bông 5XL ảnh 1" },
+        { src: "soppi2.jpg", alt: "Sóppi - Cậu cún bông 5XL ảnh 2" },
+        { src: "soppi3.jpg", alt: "Sóppi - Cậu cún bông 5XL ảnh 3" },
+        { src: "soppi4.jpg", alt: "Sóppi - Cậu cún bông 5XL ảnh 4" },
+        { src: "soppi5.jpg", alt: "Sóppi - Cậu cún bông 5XL ảnh 5" }
       ];
       let selectedPhoto = 0;
       let entries = [];
@@ -599,7 +601,7 @@
         photoImage.hidden = true;
         photoPlaceholder.hidden = false;
         photoError.hidden = false;
-        photoError.textContent = "Không tải được ảnh từ Drive. Hãy mở album hoặc chọn ảnh từ thiết bị.";
+        photoError.textContent = "Chưa tìm thấy ảnh. Hãy chắc chắn bạn đã tải ảnh lên GitHub đúng tên!";
       });
       photoImage.addEventListener("load", () => {
         photoError.hidden = true;
