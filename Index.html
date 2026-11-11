@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAF9F6">
+  <meta name="description" content="Portfolio và hồ sơ năng lực của Hồ Thu Hằng, ứng tuyển vị trí Store Manager.">
+  <title>Hồ Thu Hằng — Store Manager | Portfolio & CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #FAF9F6;
+      --paper-deep: #E8EFEA;
+      --white: #fffefa;
+      --ink: #263b32;
+      --muted: #64746b;
+      --green: #4A6B5D;
+      --green-dark: #354c40;
+      --sage: #E8EFEA;
+      --clay: #8C6D53;
+      --gold: #b8955e;
+      --line: #d9ddd4;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+      --content: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 10% 12%, rgba(220,229,220,.72), transparent 28rem),
+        radial-gradient(ellipse at 92% 38%, rgba(220,207,181,.24), transparent 26rem),
+        var(--paper);
+      font: 400 15px/1.8 var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    button { font: inherit; }
+    img { display: block; max-width: 100%; }
+    .skip-link {
+      position: absolute; z-index: 20; top: 8px; left: 8px;
+      padding: 10px 14px; background: var(--white); transform: translateY(-150%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .site-header {
+      position: sticky; z-index: 10; top: 0;
+      border-bottom: 1px solid rgba(38,59,50,.09);
+      background: rgba(246,245,239,.88); backdrop-filter: blur(14px);
+    }
+    .nav-wrap {
+      width: min(var(--content), calc(100% - 48px)); min-height: 74px;
+      margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600; }
+    .brand-mark {
+      display: grid; width: 34px; aspect-ratio: 1; place-items: center;
+      border: 1px solid var(--green); border-radius: 50%; color: var(--green-dark);
+      font: 500 13px var(--serif);
+    }
+    .nav-links { display: flex; align-items: center; gap: clamp(16px, 3vw, 36px); }
+    .nav-links a { color: var(--muted); font-size: 13px; text-decoration: none; transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--clay); }
+    .nav-contact { padding: 9px 15px; border: 1px solid var(--line); border-radius: 2px; }
+
+    main { overflow: clip; }
+    .container { width: min(var(--content), calc(100% - 48px)); margin-inline: auto; }
+    .hero {
+      min-height: 650px; display: grid; grid-template-columns: 1.05fr .95fr;
+      align-items: center; gap: clamp(40px, 8vw, 108px); padding: 82px 0 96px;
+    }
+    .eyebrow {
+      display: flex; align-items: center; gap: 11px; margin: 0 0 22px;
+      color: var(--green); font-size: 11px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
+    }
+    .eyebrow::before { width: 27px; height: 1px; background: var(--gold); content: ""; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 650px; margin-bottom: 16px; font: 500 clamp(43px, 6vw, 76px)/1.12 var(--serif);
+      letter-spacing: 0; text-wrap: balance;
+    }
+    .hero-role { margin: 0 0 25px; color: var(--green); font-size: clamp(16px, 2vw, 20px); font-weight: 400; }
+    .hero-intro { max-width: 510px; margin-bottom: 28px; color: var(--muted); }
+    .quote {
+      max-width: 510px; margin: 0 0 32px; padding: 2px 0 2px 19px;
+      border-left: 2px solid var(--gold); color: var(--green-dark);
+      font: italic 17px/1.65 var(--serif);
+    }
+    .profile-facts { display: flex; flex-wrap: wrap; gap: 7px 19px; margin: -15px 0 25px; color: var(--muted); font-size: 11px; }
+    .profile-facts span + span::before { margin-right: 19px; color: var(--gold); content: "·"; }
+    .button-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .button {
+      min-height: 46px; display: inline-flex; justify-content: center; align-items: center; gap: 10px;
+      padding: 0 19px; border: 1px solid var(--green-dark); border-radius: 2px;
+      color: var(--white); background: var(--green-dark); text-decoration: none;
+      font-size: 12px; font-weight: 500; transition: background .2s ease, transform .2s ease;
+    }
+    .button:hover { background: var(--green); transform: translateY(-2px); }
+    .button.secondary { color: var(--green-dark); background: transparent; }
+    .button.secondary:hover { background: var(--sage); }
+    .button svg { width: 16px; height: 16px; }
+    .portrait-wrap { position: relative; width: min(100%, 410px); justify-self: center; }
+    .portrait-wrap::before {
+      position: absolute; inset: 20px -18px -18px 18px; border: 1px solid rgba(82,109,91,.42);
+      border-radius: 48% 48% 3px 3px; content: "";
+    }
+    .portrait-frame {
+      position: relative; overflow: hidden; aspect-ratio: 4 / 5;
+      border-radius: 48% 48% 3px 3px; background: var(--sage);
+    }
+    .portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+    .portrait-caption {
+      position: absolute; right: -30px; bottom: 38px; max-width: 174px; padding: 14px 17px;
+      border: 1px solid rgba(38,59,50,.12); background: var(--white); color: var(--muted);
+      font: italic 13px/1.55 var(--serif);
+    }
+    .hero-index { position: absolute; left: -45px; bottom: 28px; color: var(--gold); font: italic 14px var(--serif); writing-mode: vertical-rl; }
+
+    .section { padding: 88px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 38px; }
+    .section-kicker { margin-bottom: 9px; color: var(--clay); font-size: 11px; font-weight: 600; letter-spacing: 1.1px; text-transform: uppercase; }
+    h2 { margin-bottom: 0; font: 500 clamp(32px, 4vw, 46px)/1.2 var(--serif); letter-spacing: 0; }
+    .section-note { max-width: 340px; margin: 0; color: var(--muted); font-size: 13px; }
+    .about-section { position: relative; background: rgba(232,237,229,.74); }
+    .about-intro { max-width: 700px; margin-bottom: 40px; color: var(--muted); font-size: 16px; }
+    .service-gallery { display: grid; grid-template-columns: 1.15fr .85fr 1fr; gap: 14px; margin: 0 0 44px; }
+    .service-gallery figure { position: relative; min-width: 0; height: 220px; overflow: hidden; margin: 0; background: var(--paper-deep); }
+    .service-gallery figure:first-child { height: 265px; }
+    .service-gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .service-gallery figure:hover img { transform: scale(1.035); }
+    .service-gallery figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 26px 15px 12px; color: white; background: linear-gradient(transparent, rgba(28,43,35,.68)); font-size: 11px; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(53,76,64,.2); }
+    .value-item { min-height: 170px; padding: 23px 24px; border: 1px solid rgba(53,76,64,.13); background: rgba(250,249,246,.68); }
+    .value-item + .value-item { margin-left: 12px; }
+    .value-number { display: block; margin-bottom: 19px; color: var(--gold); font: italic 14px var(--serif); }
+    .value-item h3 { margin-bottom: 8px; font: 500 19px var(--serif); }
+    .value-item p { max-width: 280px; margin-bottom: 0; color: var(--muted); font-size: 13px; }
+
+    .cv-section { padding-top: 96px; }
+    .cv-topline { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 42px; }
+    .cv-grid { display: grid; grid-template-columns: minmax(245px, .75fr) minmax(0, 1.5fr); gap: clamp(42px, 8vw, 100px); }
+    .sidebar-block { padding-bottom: 31px; margin-bottom: 29px; border-bottom: 1px solid var(--line); }
+    .sidebar-block:last-child { border-bottom: 0; }
+    .sidebar-block h3, .experience-title { margin-bottom: 18px; font: 500 21px var(--serif); }
+    .skill-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-chip { padding: 7px 10px; border: 1px solid #d5ddd3; border-radius: 2px; color: var(--green-dark); background: rgba(255,254,250,.62); font-size: 11px; }
+    .education-entry { margin-bottom: 18px; }
+    .education-entry:last-child { margin-bottom: 0; }
+    .education-entry strong { display: block; margin-bottom: 3px; font-size: 13px; font-weight: 600; }
+    .education-entry span, .contact-list a, .contact-list span { color: var(--muted); font-size: 12px; }
+    .contact-list { display: grid; gap: 11px; }
+    .contact-list a { width: fit-content; text-decoration-color: var(--gold); text-underline-offset: 3px; overflow-wrap: anywhere; }
+    .timeline { position: relative; padding-left: 25px; }
+    .timeline::before { position: absolute; top: 7px; bottom: 8px; left: 5px; width: 1px; background: var(--line); content: ""; }
+    .timeline-item { position: relative; padding: 0 0 37px 9px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before {
+      position: absolute; top: 8px; left: -24px; width: 9px; height: 9px;
+      border: 2px solid var(--paper); border-radius: 50%; background: var(--clay); box-shadow: 0 0 0 1px var(--clay); content: "";
+    }
+    .timeline-date { margin-bottom: 5px; color: var(--clay); font-size: 11px; font-weight: 600; letter-spacing: .5px; }
+    .timeline-item h3 { margin-bottom: 3px; font: 500 20px var(--serif); }
+    .timeline-company { margin-bottom: 9px; color: var(--green); font-size: 12px; font-weight: 500; }
+    .timeline-item p:last-child { max-width: 620px; margin-bottom: 0; color: var(--muted); font-size: 13px; }
+    .experience-points { display: grid; gap: 7px; padding-left: 17px; margin: 10px 0 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+    .experience-points li::marker { color: var(--gold); }
+    .experience-subrole { margin: 13px 0 4px; color: var(--green-dark); font-size: 12px; font-weight: 600; }
+    .print-row { display: flex; justify-content: center; margin-top: 48px; }
+
+    .closing {
+      padding: 64px 24px 70px; color: #f6f5ef; background: var(--green-dark); text-align: center;
+    }
+    .closing .section-kicker { color: #d7bc8c; }
+    .closing h2 { max-width: 620px; margin: 0 auto 15px; }
+    .closing p { max-width: 520px; margin: 0 auto; color: rgba(246,245,239,.72); font-size: 13px; }
+    footer { padding: 20px 24px; color: rgba(250,249,246,.75); background: #293d33; text-align: center; font-size: 11px; }
+    footer a { color: var(--white); text-decoration-color: var(--gold); text-underline-offset: 3px; }
+    .footer-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; margin-bottom: 10px; }
+
+    .floating-controls { position: fixed; z-index: 12; right: 20px; bottom: 20px; display: grid; gap: 10px; }
+    .float-button {
+      width: 46px; height: 46px; display: grid; place-items: center; padding: 0;
+      border: 1px solid rgba(255,255,255,.62); border-radius: 50%; color: var(--white);
+      background: var(--green-dark); box-shadow: 0 5px 20px rgba(38,59,50,.18); cursor: pointer;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .float-button:hover { transform: translateY(-2px); background: var(--clay); }
+    .float-button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .float-button svg { width: 19px; height: 19px; }
+    .music-waves { display: none; height: 16px; align-items: center; gap: 2px; }
+    .music-waves i { width: 2px; height: 5px; border-radius: 2px; background: currentColor; }
+    .music-playing .music-waves { display: flex; }
+    .music-playing .music-icon { display: none; }
+    .music-playing .music-waves i { animation: wave .65s ease-in-out infinite alternate; }
+    .music-playing .music-waves i:nth-child(2) { animation-delay: .18s; }
+    .music-playing .music-waves i:nth-child(3) { animation-delay: .35s; }
+    .music-playing .music-waves i:nth-child(4) { animation-delay: .1s; }
+    @keyframes wave { to { height: 15px; } }
+    #petal-canvas { position: fixed; z-index: 4; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .reveal { animation: arrive .8s both; }
+    .reveal-delay { animation-delay: .16s; }
+    @keyframes arrive { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 760px) {
+      .nav-wrap, .container { width: min(100% - 36px, var(--content)); }
+      .nav-wrap { min-height: 66px; }
+      .nav-wrap { flex-wrap: wrap; gap: 5px 16px; padding: 10px 0 8px; }
+      .nav-links { width: 100%; justify-content: space-between; gap: 8px; overflow-x: auto; }
+      .nav-links a { flex: 0 0 auto; font-size: 10px; }
+      .nav-contact { padding: 4px 7px; }
+      .hero { min-height: auto; grid-template-columns: 1fr; gap: 53px; padding: 62px 0 76px; }
+      .hero-copy { order: 1; }
+      .portrait-wrap { width: min(75%, 340px); order: 0; }
+      .portrait-caption { right: -22px; bottom: 24px; }
+      .hero-index { left: -27px; }
+      .section { padding: 67px 0; }
+      .section-head { align-items: start; flex-direction: column; margin-bottom: 28px; }
+      .section-note { max-width: 500px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .service-gallery { grid-template-columns: 1fr 1fr; gap: 9px; margin-bottom: 30px; }
+      .service-gallery figure, .service-gallery figure:first-child { height: 175px; }
+      .service-gallery figure:first-child { grid-column: 1 / -1; height: 220px; }
+      .value-item { min-height: auto; padding: 20px; }
+      .value-item + .value-item { margin: 10px 0 0; }
+      .value-number { margin-bottom: 9px; }
+      .cv-section { padding-top: 70px; }
+      .cv-topline { align-items: start; flex-direction: column; margin-bottom: 32px; }
+      .cv-grid { grid-template-columns: 1fr; gap: 28px; }
+      .cv-sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 0 25px; }
+      .sidebar-block { padding-bottom: 22px; margin-bottom: 21px; }
+      .sidebar-block:last-child { grid-column: 1 / -1; }
+      .closing { padding: 55px 20px; }
+      .floating-controls { right: 13px; bottom: 13px; }
+      .float-button { width: 42px; height: 42px; }
+    }
+    @media (max-width: 430px) {
+      body { font-size: 14px; }
+      .brand { font-size: 12px; }
+      .brand-mark { width: 30px; }
+      .nav-contact { padding: 4px 6px; }
+      .hero { gap: 42px; }
+      h1 { font-size: 43px; }
+      .portrait-wrap { width: 76%; }
+      .portrait-caption { right: -18px; max-width: 145px; padding: 11px 12px; font-size: 12px; }
+      .cv-sidebar { grid-template-columns: 1fr; }
+      .sidebar-block:last-child { grid-column: auto; }
+      .button { min-height: 43px; padding-inline: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+    @media print {
+      @page { size: A4; margin: 15mm; }
+      :root { --paper: #fff; --paper-deep: #fff; }
+      body { color: #222; background: #fff !important; font-size: 10pt; }
+      .site-header, .floating-controls, #petal-canvas, .hero-index, .button-row, .print-row, footer { display: none !important; }
+      main { overflow: visible; }
+      .container { width: 100%; }
+      .hero { min-height: 0; grid-template-columns: 1.2fr .8fr; gap: 24px; padding: 0 0 20px; }
+      .portrait-wrap { width: 170px; }
+      .portrait-caption { right: -12px; bottom: 12px; padding: 8px; font-size: 9pt; }
+      h1 { font-size: 34pt; }
+      .quote { margin-bottom: 0; }
+      .section, .cv-section { padding: 24px 0; }
+      .about-section { background: #f4f6f2 !important; }
+      .about-intro { margin-bottom: 18px; }
+      .value-item { min-height: 0; padding-top: 15px; }
+      .cv-topline { margin-bottom: 18px; }
+      .cv-topline .button { display: none !important; }
+      .cv-grid { grid-template-columns: .75fr 1.5fr; gap: 26px; }
+      .timeline-item { break-inside: avoid; padding-bottom: 20px; }
+      .closing { padding: 20px; color: #263b32; background: #fff !important; }
+      .closing p { color: #555; }
+      .service-gallery { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .service-gallery figure, .service-gallery figure:first-child { height: 110px; }
+      .service-gallery figure:first-child { grid-column: auto; }
+      .experience-points { gap: 3px; font-size: 9pt; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+  <canvas id="petal-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Điều hướng chính">
+      <a class="brand" href="#top" aria-label="Về đầu trang">
+        <span class="brand-mark">HH</span>
+        <span>Hồ Thu Hằng</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">Giới thiệu</a>
+        <a href="#philosophy">Triết lý dịch vụ</a>
+        <a href="#cv">Hồ sơ CV</a>
+        <a href="#skills">Kỹ năng</a>
+        <a class="nav-contact" href="#contact">Liên hệ</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="container hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Xin chào, tôi là</p>
+        <h1 id="hero-title">Hồ Thu<br>Hằng</h1>
+        <p class="hero-role">Store Manager <span aria-hidden="true">·</span> Quản lý Cửa hàng</p>
+        <p class="hero-intro">Chuyên môn về Dịch vụ Khách hàng và Quản trị Sự kiện F&amp;B, với kinh nghiệm điều phối sự kiện doanh nghiệp, tư vấn và chăm sóc khách hàng đa kênh.</p>
+        <blockquote class="quote">“Tôi mong muốn xây dựng một đội ngũ gắn kết và một không gian nơi mỗi khách hàng đều hài lòng.”</blockquote>
+        <div class="profile-facts" aria-label="Thông tin cá nhân">
+          <span>Ứng tuyển: Store Manager</span>
+          <span>Ngày sinh: 05.04.1999</span>
+        </div>
+        <div class="button-row">
+          <a class="button" href="#cv">
+            Xem hồ sơ CV
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 5v14m-7-7 7 7 7-7"/></svg>
+          </a>
+          <a class="button secondary" href="#contact">Kết nối ngay</a>
+        </div>
+      </div>
+      <div class="portrait-wrap reveal reveal-delay">
+        <span class="hero-index" aria-hidden="true">01 — Chân dung</span>
+        <div class="portrait-frame">
+          <!-- Thay URL ảnh Unsplash dưới đây bằng đường dẫn ảnh chân dung thật của bạn. -->
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Ảnh chân dung minh họa cho Hồ Thu Hằng; thay bằng ảnh chân dung thật" fetchpriority="high">
+        </div>
+        <div class="portrait-caption">Tỉ mỉ trong chuẩn bị, chân thành trong từng trải nghiệm.</div>
+      </div>
+    </section>
+
+    <section class="about-section section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Giới thiệu & triết lý dịch vụ</p>
+            <h2 id="about-title">Dịch vụ tốt bắt đầu<br>từ sự thấu hiểu.</h2>
+          </div>
+          <p class="section-note">Tôi kết hợp sự chỉn chu trong vận hành F&amp;B với tư duy tối ưu trải nghiệm khách hàng, từ khâu chuẩn bị đến khoảnh khắc phục vụ.</p>
+        </div>
+        <p class="about-intro">Tôi có chuyên môn sâu về Dịch vụ Khách hàng và Quản trị Sự kiện F&amp;B. Từng trực tiếp điều phối sự kiện doanh nghiệp, tư vấn và chăm sóc khách hàng đa kênh, tôi mong muốn mang khả năng sắp xếp công việc, đào tạo nhân sự và sự tỉ mỉ trong khâu chuẩn bị F&amp;B vào vai trò Quản lý Cửa hàng. Định hướng của tôi là xây dựng môi trường làm việc gắn kết cho nhân viên và không gian thưởng thức đồ uống mang lại sự hài lòng tuyệt đối cho mọi khách hàng.</p>
+        <div class="service-gallery" id="philosophy" aria-label="Không gian dịch vụ F&B truyền cảm hứng">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Tách trà và không gian thưởng trà tĩnh tại" loading="lazy">
+            <figcaption>Không gian thư thái, bắt đầu từ sự chăm chút.</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Cà phê được chuẩn bị chỉn chu" loading="lazy">
+            <figcaption>Trải nghiệm được tạo nên từ từng điểm chạm.</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Bánh ngọt thủ công dùng trong tiệc teabreak" loading="lazy">
+            <figcaption>Thẩm mỹ và chất lượng cùng hiện diện.</figcaption>
+          </figure>
+        </div>
+        <div class="values-grid">
+          <article class="value-item">
+            <span class="value-number">01 / Tận tâm</span>
+            <h3>Tận tâm phục vụ</h3>
+            <p>Lắng nghe nhu cầu và theo sát trải nghiệm khách hàng trước, trong và sau khi sử dụng dịch vụ.</p>
+          </article>
+          <article class="value-item">
+            <span class="value-number">02 / Đồng đội</span>
+            <h3>Gắn kết đội ngũ</h3>
+            <p>Phối hợp, hướng dẫn và tạo điều kiện để mỗi thành viên cùng hoàn thành mục tiêu chung.</p>
+          </article>
+          <article class="value-item">
+            <span class="value-number">03 / Chi tiết</span>
+            <h3>Tinh tế từng chi tiết</h3>
+            <p>Chăm chút khâu chuẩn bị, chất lượng sản phẩm và không gian để dịch vụ luôn chỉn chu.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section cv-section" id="cv" aria-labelledby="cv-title">
+      <div class="cv-topline">
+        <div>
+          <p class="section-kicker">Hành trình nghề nghiệp</p>
+          <h2 id="cv-title">Hồ sơ năng lực</h2>
+        </div>
+        <button class="button secondary" type="button" id="print-button">
+          Tải xuống / In CV
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v7H7z"/></svg>
+        </button>
+      </div>
+
+      <div class="cv-grid">
+        <aside class="cv-sidebar" aria-label="Thông tin bổ sung">
+          <section class="sidebar-block" id="skills">
+            <h3>Kỹ năng nổi bật</h3>
+            <div class="skill-list">
+              <span class="skill-chip">Quản trị vận hành F&amp;B</span>
+              <span class="skill-chip">Đào tạo nhân sự</span>
+              <span class="skill-chip">Chăm sóc khách hàng đa kênh</span>
+              <span class="skill-chip">Campaign Planning</span>
+              <span class="skill-chip">Data Tracking &amp; Analysis</span>
+              <span class="skill-chip">Influencer Marketing &amp; Booking</span>
+              <span class="skill-chip">Social Media Optimization</span>
+            </div>
+          </section>
+          <section class="sidebar-block">
+            <h3>Học vấn & chứng chỉ</h3>
+            <div class="education-entry">
+              <strong>Đại học Kinh tế TP.HCM</strong>
+              <span>04.2023 — 04.2026 · Thương mại điện tử</span>
+            </div>
+            <div class="education-entry">
+              <strong>Đại học Thái Bình Dương — Nha Trang</strong>
+              <span>06.2017 — 12.2022 · Quản trị Khách sạn</span>
+            </div>
+          </section>
+          <section class="sidebar-block" id="contact">
+            <h3>Liên hệ</h3>
+            <div class="contact-list">
+              <a href="tel:+84929363438">0929363438</a>
+              <a href="mailto:hothuhang0@gmail.com">hothuhang0@gmail.com</a>
+              <span>Lê Hồng Phong, Phường Buôn Ma Thuột, Đắk Lắk</span>
+            </div>
+          </section>
+        </aside>
+
+        <section aria-labelledby="experience-title">
+          <h3 class="experience-title" id="experience-title">Kinh nghiệm làm việc</h3>
+          <div class="timeline">
+            <article class="timeline-item">
+              <p class="timeline-date">06.2024 — 2026</p>
+              <h3>Quản lý Dịch vụ Teabreak &amp; Kinh doanh trực tuyến</h3>
+              <p class="timeline-company">SWEETIE PARTIE HCM</p>
+              <ul class="experience-points">
+                <li>Quản lý quy trình vận hành và kinh doanh dịch vụ tiệc teabreak, catering cho sự kiện doanh nghiệp (B2B) và khách hàng cá nhân (B2C).</li>
+                <li>Tối ưu quy trình bán hàng trực tuyến, quản lý khách hàng tiềm năng và xây dựng kịch bản tư vấn nhằm cải thiện tỷ lệ chốt đơn.</li>
+                <li>Thiết kế thực đơn linh hoạt; phát triển khay trái cây cao cấp và hộp quà bánh ngọt theo quy mô sự kiện, ngân sách khách hàng.</li>
+                <li>Xây dựng chiến lược giá; tư vấn, đàm phán, soạn báo giá chi tiết và chốt hợp đồng dịch vụ.</li>
+                <li>Điều phối hậu cần sự kiện, giám sát chuẩn bị món ăn, vận chuyển và setup không gian tiệc theo tiêu chuẩn thẩm mỹ, chất lượng.</li>
+                <li>Xử lý phát sinh tại sự kiện, chăm sóc sau tiệc để ghi nhận mức độ hài lòng và thúc đẩy khách hàng quay lại.</li>
+              </ul>
+            </article>
+            <article class="timeline-item">
+              <p class="timeline-date">04.2023 — 2026</p>
+              <h3>Vận hành QA &amp; Đánh giá chất lượng tìm kiếm</h3>
+              <p class="timeline-company">CÔNG TY TNHH VIETNAM CONCENTRIX SERVICES — GRAB VN (REMOTE)</p>
+              <p class="experience-subrole">Điều phối viên Vận hành QA Grab-Map</p>
+              <ul class="experience-points">
+                <li>Đào tạo và hỗ trợ nhân viên vận hành tạo, xác minh POI (Điểm quan tâm).</li>
+                <li>Phối hợp với trưởng nhóm theo dõi tiến độ dự án và chất lượng dữ liệu theo tiêu chuẩn QC.</li>
+              </ul>
+              <p class="experience-subrole">Search Quality Evaluator</p>
+              <ul class="experience-points">
+                <li>Đánh giá mức độ phù hợp của kết quả tìm kiếm món ăn, nhà hàng trên ứng dụng Grab.</li>
+                <li>Phân tích từ khóa và hành vi tìm kiếm, phát hiện lỗi hiển thị và hỗ trợ cải thiện thuật toán, trải nghiệm người dùng.</li>
+                <li>Quản lý công việc từ xa, đảm bảo KPI về khối lượng và độ chính xác dữ liệu.</li>
+              </ul>
+            </article>
+            <article class="timeline-item">
+              <p class="timeline-date">01.2023 — 2024</p>
+              <h3>Quản lý Đặt phòng</h3>
+              <p class="timeline-company">AUHOME.VN</p>
+              <ul class="experience-points">
+                <li>Theo dõi, cập nhật và phản hồi tin nhắn từ nhiều kênh; tiếp nhận và giải quyết vấn đề của khách hàng trực tuyến.</li>
+                <li>Quản lý danh sách bất động sản trên nhiều nền tảng, xử lý hợp đồng thuê và phối hợp với bộ phận kế toán.</li>
+                <li>Tạo thông tin nhà, phòng, căn hộ và đặt phòng mới dựa trên nguồn đã được phê duyệt.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="closing" aria-labelledby="thanks-title">
+      <p class="section-kicker">Cảm ơn bạn đã ghé thăm</p>
+      <h2 id="thanks-title">Mong được cùng bạn tạo nên trải nghiệm đáng nhớ.</h2>
+      <p>Tôi luôn sẵn sàng kết nối và chia sẻ thêm về kinh nghiệm của mình.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-meta">
+      <a href="tel:+84929363438">0929363438</a>
+      <a href="mailto:hothuhang0@gmail.com">hothuhang0@gmail.com</a>
+      <span>Lê Hồng Phong, Phường Buôn Ma Thuột, Đắk Lắk</span>
+    </div>
+    <span>© <span id="current-year"></span> Hồ Thu Hằng. Trân trọng từng trải nghiệm.</span>
+  </footer>
+
+  <div class="floating-controls" aria-label="Điều khiển hiệu ứng và âm thanh">
+    <button class="float-button" id="petal-toggle" type="button" aria-label="Tắt hiệu ứng cánh hoa" aria-pressed="true" title="Bật hoặc tắt cánh hoa">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 20c-1.6-3.1-1.6-6.2 0-9.3 1.6 3.1 1.6 6.2 0 9.3Z"/><path d="M12 13.2C8.7 12.6 6.4 10.8 5 7.5c3.4.4 5.7 2.2 7 5.7Zm.1-.1c1.2-3.4 3.4-5.3 6.8-5.8-1.2 3.4-3.4 5.3-6.8 5.8Z"/><path d="M12 10.7V5"/></svg>
+    </button>
+    <button class="float-button" id="music-toggle" type="button" aria-label="Phát âm thanh thư giãn" aria-pressed="false" title="Bật hoặc tắt âm thanh thư giãn">
+      <svg class="music-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M19.5 4.5c-7.7-.5-13 3.2-13 9.1 0 3.2 2.2 5.4 5.3 5.4 5.8 0 8.2-7.2 7.7-14.5Z"/><path d="M4 21c2.4-5.3 6-8.8 11.5-11.5"/></svg>
+      <span class="music-waves" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    </button>
+  </div>
+  <p class="sr-only" id="audio-status" aria-live="polite"></p>
+  <audio id="background-audio" loop preload="none"></audio>
+
+  <script>
+    // Có thể thay bằng đường dẫn trực tiếp tới MP3/OGG. Để trống để dùng âm nền tổng hợp nhẹ.
+    const MUSIC_URL = "";
+    const audio = document.getElementById("background-audio");
+    const musicButton = document.getElementById("music-toggle");
+    const audioStatus = document.getElementById("audio-status");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let ambientContext = null;
+    let ambientGain = null;
+    let ambientSources = [];
+    let ambientPlaying = false;
+
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+    document.getElementById("print-button").addEventListener("click", () => window.print());
+
+    if (MUSIC_URL.trim()) {
+      audio.src = MUSIC_URL.trim();
+      audio.volume = 0.3;
+    }
+
+    function updateMusicControl(isPlaying) {
+      musicButton.classList.toggle("music-playing", isPlaying);
+      musicButton.setAttribute("aria-label", isPlaying ? "Tắt âm thanh thư giãn" : "Bật âm thanh thư giãn");
+      musicButton.setAttribute("aria-pressed", String(isPlaying));
+    }
+
+    async function startAmbientSound() {
+      const AudioContextConstructor = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContextConstructor) throw new Error("Web Audio API không được hỗ trợ.");
+
+      if (!ambientContext) {
+        ambientContext = new AudioContextConstructor();
+        ambientGain = ambientContext.createGain();
+        ambientGain.gain.value = 0.0001;
+        ambientGain.connect(ambientContext.destination);
+
+        // Các lớp âm trầm và nhiễu đã lọc tạo nền âm thanh dịu, không dùng tệp ngoài.
+        [[146.83, 0.12], [220, 0.07], [293.66, 0.035]].forEach(([frequency, level]) => {
+          const oscillator = ambientContext.createOscillator();
+          const toneGain = ambientContext.createGain();
+          oscillator.type = "sine";
+          oscillator.frequency.value = frequency;
+          toneGain.gain.value = level;
+          oscillator.connect(toneGain);
+          toneGain.connect(ambientGain);
+          oscillator.start();
+          ambientSources.push(oscillator);
+        });
+
+        const noiseBuffer = ambientContext.createBuffer(1, ambientContext.sampleRate * 3, ambientContext.sampleRate);
+        const noiseData = noiseBuffer.getChannelData(0);
+        for (let index = 0; index < noiseData.length; index += 1) noiseData[index] = (Math.random() * 2 - 1) * 0.12;
+        const noise = ambientContext.createBufferSource();
+        const lowPass = ambientContext.createBiquadFilter();
+        const noiseGain = ambientContext.createGain();
+        noise.buffer = noiseBuffer;
+        noise.loop = true;
+        lowPass.type = "lowpass";
+        lowPass.frequency.value = 520;
+        noiseGain.gain.value = 0.16;
+        noise.connect(lowPass);
+        lowPass.connect(noiseGain);
+        noiseGain.connect(ambientGain);
+        noise.start();
+        ambientSources.push(noise);
+      }
+
+      await ambientContext.resume();
+      ambientPlaying = true;
+      ambientGain.gain.cancelScheduledValues(ambientContext.currentTime);
+      ambientGain.gain.setTargetAtTime(0.035, ambientContext.currentTime, 0.8);
+    }
+
+    async function stopAmbientSound() {
+      ambientPlaying = false;
+      if (!ambientContext) return;
+      ambientGain.gain.cancelScheduledValues(ambientContext.currentTime);
+      ambientGain.gain.setTargetAtTime(0.0001, ambientContext.currentTime, 0.25);
+      const contextToClose = ambientContext;
+      window.setTimeout(async () => {
+        if (ambientPlaying || ambientContext !== contextToClose) return;
+        ambientSources.forEach((source) => source.stop());
+        ambientSources = [];
+        await contextToClose.close();
+        ambientContext = null;
+        ambientGain = null;
+      }, 1000);
+    }
+
+    musicButton.setAttribute("aria-label", "Bật âm thanh thư giãn");
+    musicButton.addEventListener("click", async () => {
+      try {
+        if (MUSIC_URL.trim()) {
+          if (audio.paused) {
+            await audio.play();
+            updateMusicControl(true);
+            audioStatus.textContent = "Nhạc nền đang phát.";
+          } else {
+            audio.pause();
+            updateMusicControl(false);
+            audioStatus.textContent = "Đã tắt nhạc nền.";
+          }
+        } else if (ambientPlaying) {
+          await stopAmbientSound();
+          updateMusicControl(false);
+          audioStatus.textContent = "Đã tắt âm thanh thư giãn.";
+        } else {
+          await startAmbientSound();
+          updateMusicControl(true);
+          audioStatus.textContent = "Âm thanh thư giãn đang phát.";
+        }
+      } catch {
+        audioStatus.textContent = "Không thể phát âm thanh trên trình duyệt này.";
+      }
+    });
+
+    audio.addEventListener("ended", () => {
+      updateMusicControl(false);
+    });
+
+    // Hiệu ứng canvas nhẹ, tự giảm số cánh hoa trên màn hình nhỏ và tôn trọng cài đặt giảm chuyển động.
+    const canvas = document.getElementById("petal-canvas");
+    const context = canvas.getContext("2d");
+    const petalToggle = document.getElementById("petal-toggle");
+    let petals = [];
+    let animationFrame = 0;
+    let flowersEnabled = !reducedMotion.matches;
+    let canvasWidth = 0;
+    let canvasHeight = 0;
+
+    function resizeCanvas() {
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      canvasWidth = window.innerWidth;
+      canvasHeight = window.innerHeight;
+      canvas.width = Math.round(canvasWidth * pixelRatio);
+      canvas.height = Math.round(canvasHeight * pixelRatio);
+      context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+      const count = canvasWidth < 600 ? 8 : 15;
+      petals = Array.from({ length: count }, () => createPetal(true));
+      if (!flowersEnabled) context.clearRect(0, 0, canvasWidth, canvasHeight);
+    }
+
+    function createPetal(randomY = false) {
+      return {
+        x: Math.random() * canvasWidth,
+        y: randomY ? Math.random() * canvasHeight : -20,
+        size: 4 + Math.random() * 5,
+        speed: 0.45 + Math.random() * 0.7,
+        drift: 0.25 + Math.random() * 0.5,
+        angle: Math.random() * Math.PI * 2,
+        spin: (Math.random() - 0.5) * 0.025,
+        sway: Math.random() * Math.PI * 2,
+        color: Math.random() > 0.45 ? "rgba(197, 138, 139, .53)" : "rgba(224, 190, 167, .6)"
+      };
+    }
+
+    function drawPetal(petal) {
+      context.save();
+      context.translate(petal.x, petal.y);
+      context.rotate(petal.angle);
+      context.fillStyle = petal.color;
+      context.beginPath();
+      context.ellipse(0, 0, petal.size * 0.62, petal.size, 0, 0, Math.PI * 2);
+      context.fill();
+      context.restore();
+    }
+
+    function animatePetals() {
+      context.clearRect(0, 0, canvasWidth, canvasHeight);
+      petals.forEach((petal) => {
+        petal.y += petal.speed;
+        petal.x += Math.sin(petal.sway) * petal.drift;
+        petal.sway += 0.012;
+        petal.angle += petal.spin;
+        drawPetal(petal);
+        if (petal.y > canvasHeight + 20) Object.assign(petal, createPetal());
+      });
+      animationFrame = window.requestAnimationFrame(animatePetals);
+    }
+
+    function setFlowersEnabled(enabled) {
+      flowersEnabled = enabled;
+      petalToggle.setAttribute("aria-pressed", String(enabled));
+      petalToggle.setAttribute("aria-label", enabled ? "Tắt hiệu ứng cánh hoa" : "Bật hiệu ứng cánh hoa");
+      if (enabled && !reducedMotion.matches) {
+        window.cancelAnimationFrame(animationFrame);
+        animationFrame = window.requestAnimationFrame(animatePetals);
+      } else {
+        window.cancelAnimationFrame(animationFrame);
+        context.clearRect(0, 0, canvasWidth, canvasHeight);
+      }
+    }
+
+    petalToggle.addEventListener("click", () => setFlowersEnabled(!flowersEnabled));
+    window.addEventListener("resize", resizeCanvas, { passive: true });
+    reducedMotion.addEventListener("change", (event) => setFlowersEnabled(!event.matches));
+    resizeCanvas();
+    setFlowersEnabled(flowersEnabled);
+  </script>
+</body>
+</html>
